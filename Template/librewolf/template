@@ -1,0 +1,103 @@
+# Template file for 'librewolf'
+pkgname=librewolf
+version=145.0.2
+revision=1
+archs="x86_64"
+hostmakedepends="git"
+depends="
+gtk+3
+libXt
+startup-notification
+mime-types
+dbus
+nss
+freefont-ttf
+libpulseaudio
+ffmpeg
+hicolor-icon-theme
+libXdamage
+libXi
+alsa-lib
+libXrender
+libXcursor
+gdk-pixbuf
+libXrandr
+pango
+freetype
+glibc
+bash
+fontconfig
+libXcomposite
+glib
+libgcc
+libX11
+libXfixes
+at-spi2-core
+libxcb
+cairo
+nspr
+libXext
+"
+short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
+maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+license="MPL-2.0"
+homepage="https://librewolf.net/"
+distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/${version}-1/librewolf-${version}-1-linux-x86_64-package.tar.xz"
+_uploadpath_sig_x86_64=${distfiles}.sig
+checksum=e3a048f8b03e68d48f95bcd43b2669f63a5648ad019a51ef638833e8f7e494dc
+
+do_install(){
+	ls $wrksrc
+	vmkdir /usr/lib/librewolf
+	vmkdir /usr/bin
+
+	vcopy $wrksrc/* "/usr/lib/librewolf/"
+
+	cd $wrksrc
+	local vendorjs="$DESTDIR/usr/lib/${pkgname}/browser/defaults/preferences/vendor.js"
+
+	install -Dvm644 /dev/stdin "$vendorjs" <<END
+// Use system-provided dictionaries
+pref("spellchecker.dictionary_path", "/usr/share/hunspell");
+
+// Don't disable extensions in the application directory
+// done in librewolf.cfg
+// pref("extensions.autoDisableScopes", 11);
+END
+
+	local distini="$DESTDIR/usr/lib/${pkgname}/distribution/distribution.ini"
+	install -Dvm644 /dev/stdin "$distini" <<END
+	[Global]
+id=io.gitlab.${pkgname}-community
+version=1.0
+about=LibreWolf
+
+[Preferences]
+app.distributor="LibreWolf Community"
+app.distributor.channel=${pkgname}
+app.partner.librewolf=${pkgname}
+END
+
+	for i in 16 32 48 64 128; do
+		install -Dvm644 "$wrksrc/browser/chrome/icons/default/default$i.png" \
+			"$DESTDIR/usr/share/icons/hicolor/${i}x${i}/apps/${pkgname}.png"
+	done
+
+	  install -Dvm644 ${FILESDIR}/default192x192.png \
+    "$DESTDIR/usr/share/icons/hicolor/192x192/apps/${pkgname}.png"
+
+	install -Dvm644 "${FILESDIR}/${pkgname}.desktop" \
+    "$DESTDIR/usr/share/applications/${pkgname}.desktop"
+
+
+	install -Dvm755 /dev/stdin "$DESTDIR/usr/bin/${pkgname}" <<END
+#!/bin/sh
+exec /usr/lib/${pkgname}/librewolf "\$@"
+END
+
+ln -srfv "$DESTDIR/usr/bin/${pkgname}" "$DESTDIR/usr/lib/${pkgname}/librewolf-bin"
+local nssckbi="$DESTDIR/usr/lib/${pkgname}/libnssckbi.so"
+if [[ -e $nssckbi ]]; then
+	ln -srfv "$DESTDIR/usr/lib/libnssckbi.so" "$nssckbi"
+fi
+}
