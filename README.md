@@ -14,11 +14,13 @@ This repository currently provides pre-built packages for:
 - distrobox
 - heroic-games-launcher
 - icoextract
+- librewolf
 - obsidian
 - onlyoffice
 - patool
 - python3-fvs
 - python3-setuptools-reproducible
+- void-hybrid
 - void-linux-game
 - zen-browser
 
