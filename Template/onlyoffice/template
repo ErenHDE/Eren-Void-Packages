@@ -1,17 +1,17 @@
 # Template file for 'onlyoffice'
 pkgname=onlyoffice
-version=9.1.0
+version=9.2.0
 revision=1
 archs="x86_64"
 hostmakedepends="rpmextract tar"
 depends="curl nss nspr hicolor-icon-theme curl gtk+3 alsa-lib libpulseaudio gstreamer1 gst-plugins-ugly1 dejavu-fonts-ttf liberation-fonts-ttf"
 short_desc="An office suite that combines text, spreadsheet and presentation editors"
 maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
-license="AGPL-3.0-or-later"
+license="AGPL-3.0-only"
 homepage="https://www.onlyoffice.com/"
 options=('!strip' '!emptydirs')
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/onlyoffice-desktopeditors.x86_64.rpm"
-checksum=0ec60a49c7b8edaac9d58fb99714e67d965b6d06ba5f219a7310b220ed6b4e62
+checksum=4695a91afdecb2cc3d39f6aa999a280d616020c76fabec5cf20c8791eb4d172b
 
 nopie_files="
 /opt/onlyoffice/desktopeditors/DesktopEditors
