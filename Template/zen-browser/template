@@ -1,7 +1,7 @@
 # Template file for 'zen-browser'
 pkgname=zen-browser
 _pkgname=zen
-version=1.17.11
+version=1.17.12
 revision=1
 archs="x86_64"
 depends="libXt dbus-glib gtk+3 mime-types nss freefont-ttf ffmpeg"
@@ -12,7 +12,7 @@ homepage="https://zen-browser.app/"
 options=(!strip)
 #changelog=""
 distfiles="https://github.com/zen-browser/desktop/releases/download/${version}b/zen.linux-x86_64.tar.xz"
-checksum=34d364e1a95a35d1858d7e093f86292ac81877c3f22bf404880f2fff438d09ca
+checksum=cae97299622a6ef3fd8c06ff3494f8625094467ac5ac48ee63a81a0ac67fa14d
 
 
 do_install(){
