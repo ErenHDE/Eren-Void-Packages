@@ -1,0 +1,36 @@
+# Template file for 'freedownloadmanager'
+pkgname=freedownloadmanager
+version=6.31
+revision=1
+archs="x86_64"
+depends="openssl xdg-utils ffmpeg libtorrent gst-plugins-base1"
+short_desc="FDM is a powerful modern download accelerator and organizer."
+maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+license="Freeware"
+homepage="https://www.freedownloadmanager.org/"
+noverifyrdeps=yes
+distfiles="https://files2.freedownloadmanager.org/6/latest/freedownloadmanager.deb"
+checksum=c659566a42715c4957275d2f9b2c17b6b73f1be38eec900bfbe31243363b7a09
+
+do_install(){
+	cd $wrksrc
+
+	vsed -i 's/\/opt\/freedownloadmanager\/icon\.png/freedownloadmanager/g' \
+	'./usr/share/applications/freedownloadmanager.desktop'
+	vsed -i 's/\/opt\/freedownloadmanager\/fdm/\/usr\/bin\/fdm/g' \
+	'./usr/share/applications/freedownloadmanager.desktop'
+
+	vmkdir usr/share/icons/hicolor/256x256/apps
+	ln -sv "$wrksrc/opt/$pkgname/icon.png" \
+	"$DESTDIR/usr/share/icons/hicolor/256x256/apps/$pkgname.png"
+
+	vsed -i '/^Exec=/a StartupWMClass=fdm' \
+	'./usr/share/applications/freedownloadmanager.desktop'
+
+	vcopy etc/ .
+	vcopy opt/ .
+	vcopy usr/ .
+
+	vmkdir usr/bin
+	ln -sv "/opt/$pkgname/fdm" "$DESTDIR/usr/bin/fdm"
+}
