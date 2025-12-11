@@ -1,6 +1,6 @@
 # Template file for 'patool'
 pkgname=patool
-version=4.0.2
+version=4.0.3
 revision=1
 archs="x86_64"
 hostmakedepends="python3-build python3-installer python3-setuptools-reproducible python3-wheel python3-argcomplete"
@@ -10,7 +10,7 @@ maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://wummel.github.io/patool/"
 distfiles="https://github.com/wummel/patool/releases/download/${version}/patool-${version}.tar.gz"
-checksum=e7f62d222f4a8a6c48dbfb38056dc7f9e5778ccc07c1f16d9653a316812f83ba
+checksum=d7e3d3b69857edd4441061e27254ff1761c9e7a0627562be9eb1fc90cc08770f
 
 do_build(){
 	cd $wrksrc
