@@ -25,6 +25,7 @@ This repository currently provides pre-built packages for:
 * `zen-browser`
 * `visual-studio-code`
 * `FreeDownloadManager`
+* `unityhub`
 
 > More packages and updates will be added over time.
 
