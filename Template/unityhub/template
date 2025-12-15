@@ -1,0 +1,24 @@
+# Template file for 'unityhub'
+pkgname=unityhub
+version=3.15.3
+revision=1
+archs="x86_64"
+hostmakedepends="tar"
+depends="gtk+3 libnotify nss libXtst xdg-utils at-spi2-core util-linux-libs libsecret cpio libxml2 7zip zip unzip tar"
+short_desc="The Unity Hub is a standalone application that streamlines the way you find, download, and manage your Unity Projects and installations."
+maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+license="custom"
+homepage="https://unity.com/"
+distfiles="https://hub.unity3d.com/linux/repos/deb/pool/main/u/unity/unityhub_amd64/UnityHubSetup-amd64.deb>$pkgname-$version.deb"
+checksum=4557902db7d03a49f94b3a0f5ba6e3ae769135f94f7157f0fa0aeac4c5338206
+OPTIONS=(!strip)
+noverifyrdeps=yes
+
+do_install() {
+    vcopy $wrksrc/usr .
+    vcopy $wrksrc/opt .
+    vmkdir usr/bin
+    ln -sf '/opt/unityhub/unityhub' "$DESTDIR/usr/bin/unityhub"
+    vinstall "$FILESDIR/license.txt" 644 "usr/share/licenses/$pkgname"
+    vinstall "$FILESDIR/services-config.json" 644 "usr/share/unity3d/config"
+}
