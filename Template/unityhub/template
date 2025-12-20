@@ -1,6 +1,6 @@
 # Template file for 'unityhub'
 pkgname=unityhub
-version=3.15.3
+version=3.15.4
 revision=1
 archs="x86_64"
 hostmakedepends="tar"
@@ -9,8 +9,8 @@ short_desc="The Unity Hub is a standalone application that streamlines the way y
 maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
 license="custom"
 homepage="https://unity.com/"
-distfiles="https://hub.unity3d.com/linux/repos/deb/pool/main/u/unity/unityhub_amd64/UnityHubSetup-amd64.deb>$pkgname-$version.deb"
-checksum=4557902db7d03a49f94b3a0f5ba6e3ae769135f94f7157f0fa0aeac4c5338206
+distfiles="https://hub.unity3d.com/linux/repos/deb/pool/main/u/unity/unityhub_amd64/UnityHubSetup-${version}-amd64.deb"
+checksum=3bcad1e202d3a098147bc12c4efb24d404a118002c814e1ccb5f942135e2566f
 OPTIONS=(!strip)
 noverifyrdeps=yes
 
