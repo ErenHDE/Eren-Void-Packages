@@ -1,7 +1,7 @@
 # Template file for 'ab-download-manager'
 pkgname=ab-download-manager
 _pkgname=ABDownloadManager
-version=1.8.2
+version=1.8.3
 revision=1
 archs="x86_64"
 depends="glibc java-runtime zlib alsa-lib libglvnd libXi freetype libXtst libXrender fontconfig libX11 libXext"
@@ -12,7 +12,7 @@ homepage="https://abdownloadmanager.com/"
 #changelog=""
 distfiles="https://github.com/amir1376/ab-download-manager/releases/download/v${version}/ABDownloadManager_${version}_linux_x64.tar.gz"
 options=(!debug)
-checksum=7f2724387adc6480423bd9109abe3c5ab83bdc607dc3154435c74217638c1404
+checksum=21f62abdc50886f5b7ebc5aaa3387c3c5b99e83a29950c1014b7a311d8c0b765
 
 do_install(){
 	vmkdir opt/
