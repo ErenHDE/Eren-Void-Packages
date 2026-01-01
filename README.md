@@ -28,6 +28,7 @@ This repository currently provides pre-built packages for:
 * `void-linux-game`
 * `vscodium`
 * `zen-browser`
+* `void-hybrid`
 
 > More packages and updates will be added over time.
 
