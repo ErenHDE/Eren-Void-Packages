@@ -1,6 +1,6 @@
 # Template file for 'librewolf'
 pkgname=librewolf
-version=146.0.1
+version=147.0.1
 _number=1
 revision=1
 archs="x86_64"
@@ -45,15 +45,15 @@ license="MPL-2.0"
 homepage="https://librewolf.net/"
 
 distfiles="
-	https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/${version}-${_number}/librewolf-${version}-${_number}-linux-x86_64-package.tar.xz
-	https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/${version}-${_number}/librewolf-${version}-${_number}-linux-x86_64-package.tar.xz.sig
+	https://codeberg.org/api/packages/librewolf/generic/librewolf/${version}-${_number}/librewolf-${version}-${_number}-linux-x86_64-package.tar.xz
+	https://codeberg.org/api/packages/librewolf/generic/librewolf/${version}-${_number}/librewolf-${version}-${_number}-linux-x86_64-package.tar.xz.sig
 	https://repo.librewolf.net/pubkey.gpg
 "
 
 
 checksum="
-	a51a521c090b42983cd2939f501bc606e8ebe1f0c3838c2996d548c3dc2b9411
-	ccede5e8123ec8f16f70e6d1e8e0791992d4d3992e88feaa451bc3c4e718e5c6
+	4b93e45208be17add3d80a48bd62d6e48778164f1ec36e2494d7d23dda4274c7
+	cea8c38dc5ded508c20d9b697bd2d8589857ce9f08a2912da12573ebfd3636a2
 	9ced1a0ce0216bbd16cb95847584892ddb3642718530407aeb5b6b0642d3d24a
 	"
 
