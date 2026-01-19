@@ -52,7 +52,7 @@ To add the repository to your Void Linux system:
     sudo xbps-install <packageName>
     ```
 
-### 2. Manual Setup (Building from Source)
+### 2. Manual Setup
 
 If you prefer to build the packages using `xbps-src`:
 
