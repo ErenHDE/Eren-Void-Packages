@@ -46,7 +46,6 @@ do_extract() {
 
 do_install() {
     vmkdir usr/share/fonts/TTF
-    ls -l "${wrksrc}"
     vcopy "*.ttf" usr/share/fonts/TTF
     vlicense licen.txt
 }
