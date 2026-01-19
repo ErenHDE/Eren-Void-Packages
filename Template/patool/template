@@ -18,5 +18,5 @@ post_install() {
 	register-python-argcomplete patool > patool_completion
 	vinstall patool_completion 644 usr/share/bash-completion/completions patool
 
-	vman $wrksrc/doc/patool.1
+	vman doc/patool.1
 }
