@@ -1,0 +1,25 @@
+# Template file for 'minecraft-launcher'
+pkgname=minecraft-launcher
+version=2.1.3
+revision=1
+archs="x86_64"
+depends="gtk+3 libgcc zlib libgpg-error"
+short_desc="Official Minecraft Launcher"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://mojang.com/"
+distfiles="
+https://launcher.mojang.com/download/Minecraft.tar.gz
+https://launcher.mojang.com/download/minecraft-launcher.svg"
+checksum="
+695269281547bbbcf47fe74633027a0e4ddc13a61060c686a7217e85d314e45e
+35c2bcaeb09fa4b8864e9422fd66bf60847706f8b4400ec4a66ba6436b101f71"
+
+skip_extraction="minecraft-launcher.svg"
+
+do_install(){
+  vinstall "${FILESDIR}/minecraft-launcher.sh" 755 "/usr/bin/"
+  vinstall "$XBPS_SRCDISTDIR/$pkgname-$version/minecraft-launcher.svg" 644 "/usr/share/icons/hicolor/symbolic/apps/"
+  vinstall "${FILESDIR}/minecraft-launcher.desktop" 644 "/usr/share/applications/"
+  vinstall "minecraft-launcher" 755 "/usr/bin/"
+}
