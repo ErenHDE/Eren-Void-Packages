@@ -30,6 +30,7 @@ This repository currently provides pre-built packages for:
 * `zen-browser`
 * `void-hybrid`
 * `ms-font-ttf`
+* `minecraft-launcher`
 
 > More packages and updates will be added over time.
 
