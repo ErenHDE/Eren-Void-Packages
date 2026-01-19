@@ -29,6 +29,7 @@ This repository currently provides pre-built packages for:
 * `vscodium`
 * `zen-browser`
 * `void-hybrid`
+* `ms-font-ttf`
 
 > More packages and updates will be added over time.
 
