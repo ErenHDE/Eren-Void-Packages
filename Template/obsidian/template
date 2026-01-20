@@ -1,6 +1,6 @@
 # Template file for 'obsidian'
 pkgname=obsidian
-version=1.11.4
+version=1.11.5
 revision=1
 archs="x86_64"
 depends="glibc libgcc fontconfig bash zlib hicolor-icon-theme fuse electron35"
@@ -14,13 +14,12 @@ maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
 license="LicenseRef-Obsidian"
 homepage="https://obsidian.md"
 distfiles="https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/obsidian-${version}.tar.gz"
-checksum=c1be7f7ba84318369de31fcb6bb7033ac74d4e6ce3a20527c37f3b87625c08b3
-nostrip=yes
+checksum=8f584c11ecb967480790e65319674340bfcd2a34fb4b7a95bb70a96fcf19abaf
 
 do_install(){
 	cd $FILESDIR
-	vinstall "$pkgname.sh" 755 /usr/bin
-	vinstall "$pkgname.desktop" 644 /usr/share/applications
+	vinstall "$pkgname.sh" 755 /usr/bin/
+	vinstall "$pkgname.desktop" 644 /usr/share/applications/
     cd $wrksrc/resources
     vmkdir /usr/lib/obsidian
     vinstall icon.png 644 /usr/share/pixmaps/ obsidian.png
