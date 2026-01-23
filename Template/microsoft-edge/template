@@ -1,0 +1,25 @@
+# Template file for 'microsoft-edge'
+pkgname=microsoft-edge
+version=143.0.3650.66
+revision=1
+archs="x86_64"
+depends="gtk+3 libcups nss alsa-lib libXtst libdrm mesa libxml2"
+short_desc="A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier"
+maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+license="custom"
+homepage="https://www.microsoftedgeinsider.com/en-us/download"
+distfiles="https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/${pkgname}-stable_${version}-1_amd64.deb"
+checksum=39a93bafbca438326cab375bf9c126ce452b71ecd351ef9797da28d6552babac
+
+do_install(){
+    vcopy $wrksrc/usr .
+    vcopy $wrksrc/opt .
+    vcopy $wrksrc/etc .
+	chmod 4755 "${DESTDIR}/opt/microsoft/msedge/msedge-sandbox"
+
+	for res in 16 24 32 48 64 128 256; do
+		install -Dm644 "${DESTDIR}/opt/microsoft/msedge/product_logo_${res}.png" \
+			"${DESTDIR}/usr/share/icons/hicolor/${res}x${res}/apps/${pkgname}.png"
+	done
+	vinstall ${FILESDIR}/microsoft-edge-stable.sh 755 "/usr/bin/" microsoft-edge-stable
+}
