@@ -7,7 +7,7 @@ It contains pre-built `.xbps` packages for popular applications, enabling easy i
 
 ## ✨ Included Packages
 
-This repository currently provides pre-built packages for:
+This repository currently provides packages for:
 
 * `ab-download-manager`
 * `bottles`
