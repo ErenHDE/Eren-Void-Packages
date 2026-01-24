@@ -1,11 +1,10 @@
 # Template file for 'void-linux-game'
 pkgname=void-linux-game
 version=1
-revision=1
+revision=2
 archs="x86_64"
 metapackage=yes
 homepage="https://github.com/ErenHDE"
-
 depends="
 alsa-plugins
 giflib
@@ -18,6 +17,8 @@ libva-32bit
 libmpg123-32bit
 ocl-icd-32bit
 libopenal-32bit
+libunwind-32bit
+wine-32bit
 libjpeg-turbo
 libva
 libxslt
@@ -39,7 +40,10 @@ glibc-32bit
 mesa-dri-32bit
 mesa-vulkan-radeon-32bit
 vulkan-loader
-vulkan-loader-32bit"
-short_desc="Void Linux Game application"
+vulkan-loader-32bit
+heroic-games-launcher
+libunwind"
+
+short_desc="Void Linux Game application for AMD-GPU"
 maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
 license="GPL-3.0-or-later"
