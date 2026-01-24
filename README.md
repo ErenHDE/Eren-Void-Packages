@@ -1,4 +1,4 @@
-# 📦 Void-HDE Repository: Custom Packages for Void Linux
+# 📦 Eren-Void-Packages Repository: Custom Packages for Void Linux
 
 **Void-HDE** is a custom package repository designed for **Void Linux** users.
 It contains pre-built `.xbps` packages for popular applications, enabling easy installation and updates without the need to build everything from source.
