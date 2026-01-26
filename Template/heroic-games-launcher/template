@@ -1,5 +1,5 @@
 pkgname=heroic-games-launcher
-version=2.18.1
+version=2.19.0
 revision=1
 archs="x86_64"
 hostmakedepends="rpmextract tar"
@@ -15,11 +15,9 @@ nopie_files="
 /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/gogdl
 /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/legendary
 /opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/nile
-
 "
-
 distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/${_filename}"
-checksum=26e72c5473a733314412d508b82cdd9ed1f904b676441d67d90f10565e03fc62
+checksum=2503ff379e3b2083a8dab3a3067f9d9c80977d26a81894351267ff899e29a34a
 
 do_install() {
     vcopy usr .
