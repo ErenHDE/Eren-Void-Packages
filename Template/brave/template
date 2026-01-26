@@ -1,7 +1,7 @@
 # Template file for 'brave
 pkgname=brave
 version=1.86.142
-revision=1
+revision=2
 archs="x86_64"
 hostmakedepends="rpmextract tar"
 depends="alsa-lib nss freefont-ttf gtk+3"
@@ -13,14 +13,18 @@ distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/
 checksum=a9c05eec76427a70ad15eb09b82bbfb9423e7ae175189d960ec3a31f24d9dbff
 
 do_install(){
-    vcopy $wrksrc/usr .
-    vcopy $wrksrc/opt .
-    vcopy $wrksrc/etc .
-    vmkdir "usr/bin"
-    ln -sf /opt/brave-browser/brave-browser "$DESTDIR/usr/bin/brave-browser"
+	vcopy $wrksrc/usr .
+	vcopy $wrksrc/opt .
+	vcopy $wrksrc/etc .
+	vmkdir "usr/bin"
 
-    for size in 16x16 24x24 32x32 48x48 64x64 128x128 256x256; do
-        install -Dm0644 "$DESTDIR/opt/brave.com/$pkgname/product_logo_${size/x*/}.png" \
-            "$DESTDIR/usr/share/icons/hicolor/$size/apps/brave-browser.png"
-    done
+	ln -sf /opt/brave.com/brave/brave-browser "${DESTDIR}/usr/bin/brave-browser"
+	ln -sf /opt/brave.com/brave/brave-browser "${DESTDIR}/usr/bin/brave-browser-stable"
+
+	for size in 16x16 24x24 32x32 48x48 64x64 128x128 256x256; do
+		install -Dm0644 "$DESTDIR/opt/brave.com/$pkgname/product_logo_${size/x*/}.png" \
+			"$DESTDIR/usr/share/icons/hicolor/$size/apps/brave-browser.png"
+	done
+
+	vlicense ${wrksrc}/opt/brave.com/brave/LICENSE
 }
