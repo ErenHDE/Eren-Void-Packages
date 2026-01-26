@@ -2,7 +2,7 @@
 pkgname=zen-browser
 _pkgname=zen
 version=1.18.1
-revision=1
+revision=2
 archs="x86_64"
 depends="libXt dbus-glib gtk+3 mime-types nss freefont-ttf ffmpeg"
 short_desc="Performance oriented Firefox-based web browser"
@@ -23,7 +23,7 @@ do_install(){
 
 	vcopy $wrksrc/* opt/$pkgname/
 	vinstall ${FILESDIR}/${_pkgname}.desktop 644 "/usr/share/applications/"
-	vinstall  ${FILESDIR}/$pkgname.sh 755 "/usr/bin/$pkgname"
+	vinstall  ${FILESDIR}/$pkgname.sh 755 "/usr/bin/" $pkgname
 
 	for i in 16x16 32x32 48x48 64x64 128x128; do
 		vmkdir /usr/share/icons/hicolor/$i/apps/
