@@ -25,10 +25,8 @@ This repository currently provides packages for:
 * `visual-studio-code`
 * `void-linux-game`
 * `vkBasalt-cli`
-* `void-linux-game`
 * `vscodium`
 * `zen-browser`
-* `void-hybrid`
 * `ms-font-ttf`
 * `minecraft-launcher`
 * `microsoft-edge`
