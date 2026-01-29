@@ -1,0 +1,38 @@
+# Template file for 'protonup-qt'
+pkgname=protonup-qt
+_app_id=net.davidotek.pupgui2
+version=2.14.0
+revision=1
+archs="x86_64"
+build_style=python3-pep517
+hostmakedepends="
+python3-build
+python3-installer
+python3-setuptools
+python3-wheel"
+depends="
+python3-pyside6
+python3-pyside6-gui
+python3-pyside6-widgets
+python3-pyside6-ui-tools
+python3-pyside6-dbus
+python3-psutil
+python3-steam
+python3-requests
+python3-vdf
+python3-zstandard
+qt6-base
+qt6-tools
+python3-steam
+which"
+short_desc="Install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE for Lutris"
+maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://davidotek.github.io/protonup-qt"
+distfiles="https://github.com/DavidoTek/ProtonUp-Qt/archive/refs/tags/v${version}.tar.gz>${pkgname}-${version}.tar.gz"
+checksum=436c8fe8e592ca5ee8bfbb4189cdf6fa87eb125437a06dc28125f0dfef2e237a
+
+post_install() {
+	vcopy share "usr/"
+	ln -s "/usr/bin/$pkgname" "$DESTDIR/usr/bin/${_app_id}"
+}
