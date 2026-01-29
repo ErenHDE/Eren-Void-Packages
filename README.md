@@ -29,7 +29,8 @@ This repository currently provides packages for:
 * `zen-browser`
 * `ms-font-ttf`
 * `minecraft-launcher`
-* `microsoft-edge`
+* `protonup-qt`
+* `python3-steam`
 
 > More packages and updates will be added over time.
 
