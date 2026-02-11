@@ -1,7 +1,7 @@
 # Template file for 'vscodium'
 pkgname=vscodium
 _pkgname=VSCodium
-version=1.109.01000
+version=1.109.21026
 revision=1
 archs="x86_64"
 depends="fontconfig libXtst gtk+3 python3 cairo alsa-lib nss libgcc libnotify	 bash"
@@ -15,7 +15,7 @@ https://github.com/VSCodium/vscodium/releases/download/${version}/${_pkgname}-li
 "
 checksum="
 e622e6bdb70b0cfec57ad9df8717ea023b87e5e215003119b5a1a4d059fcd347
-32e52a31b292e66c93a5be124bd520f9176b1c0971cb69dcbf084cb78283021f
+eaff3ba44e3f410fc7f9d2e4fd639eae31715265c2960a0a58c363e30b3ca00c
 "
 skip_extraction="code.svg"
 shopt -s extglob
