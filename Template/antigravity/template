@@ -1,0 +1,35 @@
+# Template file for 'antigravity'
+pkgname=antigravity
+version=1.16.5
+revision=1
+archs="x86_64"
+_x86minor=1770081357
+_x86check=1e91c55b802c42d27f931c53e68fc2ab
+hostmakedepends="jq"
+_electron=electron35
+depends="bash $_electron libX11 libxkbfile"
+short_desc="An agentic development platform from Google, evolving the IDE into the agent-first era"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
+license="LicenseRef-Google-Antigravity"
+homepage="https://antigravity.google/"
+distfiles="https://us-central1-apt.pkg.dev/projects/$pkgname-auto-updater-dev/pool/$pkgname-debian/${pkgname}_${version}-${_x86minor}_amd64_${_x86check}.deb>Antigravity-$version-x86_64.deb"
+checksum=412b197ab4c417eb0144ebb6877794937e4d484659f348f19aa262c9c12c796c
+
+do_install(){
+	vbin $FILESDIR/$pkgname.sh $pkgname
+	vmkdir "usr/lib/$pkgname"
+	vcopy share/antigravity/resources/app/* "usr/lib/$pkgname/"
+	vlicense $DESTDIR/usr/lib/$pkgname/LICENSE.txt
+
+	sed -i "s|/usr/share/antigravity/antigravity|/usr/bin/antigravity|g" share/applications/*.desktop
+
+	vinstall share/appdata/$pkgname.appdata.xml 644 "usr/share/metainfo"
+	vinstall share/applications/$pkgname.desktop 644 "usr/share/applications"
+	vinstall share/applications/$pkgname-url-handler.desktop 644 "usr/share/applications"
+
+	vinstall share/bash-completion/completions/$pkgname 644 "usr/share/bash-completion/completions"
+	vinstall share/zsh/vendor-completions/_$pkgname 644 "usr/share/zsh/site-functions"
+	vinstall share/mime/packages/$pkgname-workspace.xml 644 "usr/share/mime/packages"
+	vinstall share/pixmaps/$pkgname.png 644 "usr/share/pixmaps"
+	rm -rf "$pkgdir/usr/lib/resources/"
+}
