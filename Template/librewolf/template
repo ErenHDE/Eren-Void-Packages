@@ -40,7 +40,7 @@ nspr
 libXext
 "
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
-maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="MPL-2.0"
 homepage="https://librewolf.net/"
 
