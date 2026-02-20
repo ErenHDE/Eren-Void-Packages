@@ -10,7 +10,7 @@ source=("obsidian.sh"
         "obsidian.desktop"
         "LICENSE-Obsidian")
 short_desc="A powerful knowledge base that works on top of a local folder of plain text Markdown files"
-maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="LicenseRef-Obsidian"
 homepage="https://obsidian.md"
 distfiles="https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/obsidian-${version}.tar.gz"
