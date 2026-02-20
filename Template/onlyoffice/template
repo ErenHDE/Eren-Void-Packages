@@ -21,7 +21,7 @@ desktop-file-utils
 hicolor-icon-theme"
 
 short_desc="An office suite that combines text, spreadsheet and presentation editors"
-maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="AGPL-3.0-only"
 homepage="https://www.onlyoffice.com/"
 options=('!strip' '!emptydirs')
