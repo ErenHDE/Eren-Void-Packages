@@ -17,7 +17,7 @@ python3-requests
 python3-six
 python3-vdf"
 short_desc="Python package for interacting with Steam"
-maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="MIT"
 homepage="https://github.com/solsticegamestudios/steam"
 distfiles="https://github.com/solsticegamestudios/steam/archive/refs/tags/v${version}.tar.gz"
