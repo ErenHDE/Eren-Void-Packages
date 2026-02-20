@@ -1,12 +1,12 @@
 # Template file for 'vscodium'
 pkgname=vscodium
 _pkgname=VSCodium
-version=1.109.41146
+version=1.109.51242
 revision=1
 archs="x86_64"
 depends="fontconfig libXtst gtk+3 python3 cairo alsa-lib nss libgcc libnotify	 bash"
 short_desc="Binary releases of VS Code without MS branding/telemetry/licensing."
-maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="MIT"
 homepage="https://github.com/VSCodium/vscodium"
 distfiles="
@@ -15,7 +15,7 @@ https://github.com/VSCodium/vscodium/releases/download/${version}/${_pkgname}-li
 "
 checksum="
 e622e6bdb70b0cfec57ad9df8717ea023b87e5e215003119b5a1a4d059fcd347
-6d25f29f2b7aeb814179c005e8902afe5c66f8e97f0d1db542e3bc62fdc4ec5b
+66dba3b928d1ce9b367fb05c855016e31f247829c72b940718dbde08b444f904
 "
 skip_extraction="code.svg"
 shopt -s extglob
@@ -25,17 +25,17 @@ do_install(){
 	vmkdir usr/bin
 	vmkdir usr/share/applications
 	vmkdir usr/share/pixmaps
-	vinstall ${FILESDIR}/LICENSE 644 "/usr/share/licenses/${pkgname}/"
+	vlicense ${FILESDIR}/LICENSE
 	vcopy $wrksrc/* opt/${pkgname}
 	find "${DESTDIR}/opt/${pkgname}" -maxdepth 1 -type l -delete
-	ln -sf "/opt/${pkgname}/bin/codium" "${DESTDIR}/usr/bin/codium"
-	ln -sf "/opt/${pkgname}/bin/codium" "${DESTDIR}/usr/bin/vscodium"
+	ln -sf "/opt/${pkgname}/bin/codium" codium
+	ln -sf "/opt/${pkgname}/bin/codium" vscodium
 	vinstall ${FILESDIR}/"vscodium.desktop" 644 "/usr/share/applications/"
 	vinstall ${FILESDIR}/"vscodium-wayland.desktop" 644 "/usr/share/applications/"
 	vinstall ${FILESDIR}/"vscodium-url-handler.desktop" 644 "/usr/share/applications/"
 	vinstall "resources/app/resources/linux/code.png" 644 "/usr/share/pixmaps/" vscodium.png
 	vinstall $XBPS_SRCDISTDIR/${pkgname}-${version}/"code.svg" 644 "/usr/share/icons/hicolor/scalable/apps/" vscodium.svg
-	vinstall ${FILESDIR}/"${pkgname}.sh" 755 "/usr/bin/" codium
+	vbin ${FILESDIR}/"${pkgname}.sh" codium
 	vinstall $wrksrc/chrome-sandbox 4755 "/opt/${pkgname}/"
 	vmkdir usr/share/zsh/site-functions
 	vmkdir usr/share/bash-completion/completions
