@@ -1,14 +1,13 @@
 # Template file for 'visual-studio-code'
 pkgname=visual-studio-code
-version=1.109.1
+version=1.109.5
 revision=1
 archs="x86_64"
 depends="libxkbfile gnupg gtk+3 libsecret nss libgcc libnotify glibc lsof shared-mime-info xdg-utils alsa-lib"
 short_desc="Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)"
-maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="custom: commercial"
 homepage="https://code.visualstudio.com/"
-options=(!strip)
 distfiles="
 	https://raw.githubusercontent.com/microsoft/vscode/${version}/resources/linux/code.desktop>code-${version}.desktop.in
 	https://raw.githubusercontent.com/microsoft/vscode/${version}/resources/linux/code-url-handler.desktop>code-${version}-url-handler.desktop.in
@@ -19,7 +18,7 @@ checksum="
 	2f1782b30c4e040efff655fd9cf477930c5a0c81ddae27749b0cbb922c1d248e
 	c361efa7e02fcad759ed80d2fbab67877f33219b981578af6fffaf18aeb12d9b
 	3af748dd6578a1775e8eb7248ba397b7e11840df2ea6ee234ff76fee3dc306cf
-	3a07a809d20e65a77da385f86304cca0a35a044a31c712f55e4df99339b4d4a9
+	70160103c0dda50f651a37ee27a65a9a64a6938734cf1a0bcd49d83612bdb1a7
 "
 
 skip_extraction="code-${version}.desktop.in code-${version}-url-handler.desktop.in code-${version}-workspace.xml.in"
@@ -49,7 +48,7 @@ do_install(){
     vmkdir usr/share/mime/packages
     vmkdir usr/share/licenses/${pkgname}
 
-	vinstall "resources/app/LICENSE.rtf" 644 "/usr/share/licenses/${pkgname}/"
+	vlicense "resources/app/LICENSE.rtf"
 	vinstall "resources/app/resources/linux/code.png" 644 "/usr/share/pixmaps/" ${pkgname}.png
 	vinstall "code.desktop" 644 "/usr/share/applications/"
 	vinstall "code-url-handler.desktop" 644 "/usr/share/applications/"
@@ -59,6 +58,6 @@ do_install(){
 
 	vcopy "${wrksrc}/*" "/opt/${pkgname}"
 
-	vinstall "${FILESDIR}/${pkgname}.sh" 755 "/usr/bin/" code
+	vbin "${FILESDIR}/${pkgname}.sh" code
 
 }
