@@ -8,7 +8,7 @@ opt_depends="
 docker:Docker support
 podman: Podman support"
 short_desc="Use any linux distribution inside your terminal."
-maintainer="Eren Öztürk <erenozturkhde@gmail.com>"
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://distrobox.it"
 #changelog=""
