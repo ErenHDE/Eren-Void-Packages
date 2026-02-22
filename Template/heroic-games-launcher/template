@@ -1,27 +1,36 @@
+# Template file for 'heroic-games-launcher'
 pkgname=heroic-games-launcher
-version=2.19.1
+version=2.20.0
 revision=1
+nopie=yes
 archs="x86_64"
-hostmakedepends="rpmextract tar"
-depends="which"
-short_desc="An open-source launcher for Epic, Amazon and GOG Games"
+hostmakedepends="pnpm python3"
+makedepends="electron35-devel"
+depends="wine winetricks curl zenity gamemode"
+short_desc="A games launcher for GOG, Amazon and Epic Games."
 maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="GPL-3.0-or-later"
-_filename="Heroic-${version}-linux-x86_64.rpm"
 homepage="https://heroicgameslauncher.com/"
-options="!strip nopie"
+distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/archive/refs/tags/v${version}.tar.gz"
+checksum=c339ebf5d7783aa8903f234d1f7edc1f50fbebc894e039b53556a44264ab4ae9
 
-nopie_files="
-/opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/gogdl
-/opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/legendary
-/opt/Heroic/resources/app.asar.unpacked/build/bin/x64/linux/nile
-"
-distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/${_filename}"
-checksum=a9057bf49a0ad348b8d40a17757752806f843b350de53bd2c6db0793792b9196
+do_build() {
+	export CFLAGS="${CFLAGS//-fno-PIE/}"
+	export CXXFLAGS="${CXXFLAGS//-fno-PIE/}"
+	export LDFLAGS="${LDFLAGS//-no-pie/}"
+
+	pnpm install
+	pnpm download-helper-binaries
+	pnpm dist:linux tar.xz
+}
 
 do_install() {
-    vcopy usr .
-    vcopy opt .
-    vmkdir "/usr/bin"
-    ln -s /opt/Heroic/heroic "$DESTDIR/usr/bin/heroic"
+	vcopy dist/linux-unpacked /usr/lib/heroic
+
+	vmkdir usr/bin
+	ln -sf /usr/lib/heroic/heroic ${DESTDIR}/usr/bin/heroic
+
+	sed -i 's/heroic-run/heroic/' flatpak/com.heroicgameslauncher.hgl.desktop
+	vinstall flatpak/com.heroicgameslauncher.hgl.desktop 644 usr/share/applications
+	vinstall flatpak/com.heroicgameslauncher.hgl.png 644 usr/share/pixmaps
 }
