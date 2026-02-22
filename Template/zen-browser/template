@@ -1,7 +1,7 @@
 # Template file for 'zen-browser'
 pkgname=zen-browser
 _pkgname=zen
-version=1.18.9
+version=1.18.10
 revision=1
 archs="x86_64"
 depends="libXt dbus-glib gtk+3 mime-types nss freefont-ttf ffmpeg"
@@ -11,7 +11,7 @@ license="MPL-2.0"
 homepage="https://zen-browser.app/"
 changelog="https://zen-browser.app/release-notes/"
 distfiles="https://github.com/zen-browser/desktop/releases/download/${version}b/zen.linux-x86_64.tar.xz"
-checksum=32249dc6cf6ab1794896ab7733e559ee59a7de5d74e129fef26e7dc1c4054f78
+checksum=4303f8d2d87ce2a933277cdfc951cf5a72d25fc9ba2c51ea9331f7630c8dbe38
 
 
 do_install(){
