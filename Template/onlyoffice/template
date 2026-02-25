@@ -1,9 +1,9 @@
 # Template file for 'onlyoffice'
 pkgname=onlyoffice
-version=9.2.1
-revision=2
+version=9.3.0
+revision=1
 archs="x86_64"
-hostmakedepends="rpmextract tar"
+hostmakedepends="rpmextract"
 depends="
 curl
 gtk+3
@@ -26,7 +26,7 @@ license="AGPL-3.0-only"
 homepage="https://www.onlyoffice.com/"
 options=('!strip' '!emptydirs')
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/onlyoffice-desktopeditors.x86_64.rpm"
-checksum=739ca54694764c4fd5a140dd3f878f31d9158174e76267512c94a3a09286a514
+checksum=3df5000c06478592ccb02035bbd38260427487b96d10425b6358f13aea8cbc0e
 
 nopie_files="
 /opt/onlyoffice/desktopeditors/DesktopEditors
