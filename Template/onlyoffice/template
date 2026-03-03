@@ -1,6 +1,6 @@
 # Template file for 'onlyoffice'
 pkgname=onlyoffice
-version=9.3.0
+version=9.3.1
 revision=1
 archs="x86_64"
 hostmakedepends="rpmextract"
@@ -24,9 +24,8 @@ short_desc="An office suite that combines text, spreadsheet and presentation edi
 maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="AGPL-3.0-only"
 homepage="https://www.onlyoffice.com/"
-options=('!strip' '!emptydirs')
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/onlyoffice-desktopeditors.x86_64.rpm"
-checksum=3df5000c06478592ccb02035bbd38260427487b96d10425b6358f13aea8cbc0e
+checksum=3de718a98a172dcd42e7e864c165c936a036e45a7e9f445ea06147f6aa2c8c96
 
 nopie_files="
 /opt/onlyoffice/desktopeditors/DesktopEditors
@@ -35,8 +34,5 @@ nopie_files="
 "
 
 do_install() {
-    vcopy $wrksrc/usr .
-    vcopy $wrksrc/opt .
-    vmkdir "/usr/bin"
-    ln -s /opt/onlyoffice/onlyoffice "$DESTDIR/usr/bin/onlyoffice"
+    vcopy "*" /
 }
