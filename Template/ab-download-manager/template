@@ -1,0 +1,39 @@
+# Template file for 'ab-download-manager'
+pkgname=ab-download-manager
+version=1.8.7
+revision=1
+hostmakedepends="gradle openjdk21 openjdk21-jmods git"
+wrksrc="ab-download-manager"
+depends="libXrender libXtst harfbuzz fontconfig gtk+3"
+short_desc="Download Manager that speeds up your downloads "
+maintainer="ErenHDE <erenozturkhde@gmail.com>"
+license="Apache-2.0"
+homepage="https://abdownloadmanager.com/"
+changelog="https://github.com/amir1376/ab-download-manager/blob/master/CHANGELOG.md"
+
+do_fetch() {
+    git clone --branch v${version} --depth 1 \
+        https://github.com/amir1376/ab-download-manager.git \
+        ${wrksrc}
+}
+
+post_patch() {
+    # Android composite build'i devre dışı bırak
+    sed -i '/includeBuild("compositeBuilds\/plugins")/d' settings.gradle.kts
+
+    # Android module'u disable et
+    sed -i '/include(":android/d' settings.gradle.kts
+}
+
+do_build() {
+    export JAVA_HOME=/usr/lib/jvm/openjdk21
+    ./gradlew createReleaseDistributable --no-daemon
+}
+
+do_install() {
+	vmkdir "opt/abdownloadmanager/"
+	vcopy desktop/app/build/compose/binaries/main-release/app/ABDownloadManager/* "opt/abdownloadmanager/"
+
+	vinstall desktop/app/icons/icon.png 644 usr/share/icons/hicolor/512x512/apps/ abdownloadmanager.png
+	vinstall "${FILESDIR}/abdownloadmanager.desktop" 644 "usr/share/applications/"
+}
