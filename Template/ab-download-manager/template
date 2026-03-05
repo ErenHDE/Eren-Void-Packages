@@ -18,10 +18,7 @@ do_fetch() {
 }
 
 post_patch() {
-    # Android composite build'i devre dışı bırak
     sed -i '/includeBuild("compositeBuilds\/plugins")/d' settings.gradle.kts
-
-    # Android module'u disable et
     sed -i '/include(":android/d' settings.gradle.kts
 }
 
