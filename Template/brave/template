@@ -1,6 +1,6 @@
 # Template file for 'brave
 pkgname=brave
-version=1.87.190
+version=1.87.192
 revision=1
 archs="x86_64"
 hostmakedepends="rpmextract"
@@ -10,7 +10,7 @@ maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="MLP-2.0 BSD custom:chromium"
 homepage="https://brave.com/"
 distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser-${version}-1.x86_64.rpm"
-checksum=74ef26aa4302d9e647e2f5bb14732b0de1a67f1c11d4d2f4e502b546c7c1bdfa
+checksum=bed3defbd56e2f7f64f4528129cb8ac46e016e78ccac73149e570170bb4d10ce
 
 do_install(){
 	vcopy $wrksrc/usr .
