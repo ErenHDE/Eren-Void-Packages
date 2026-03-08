@@ -1,0 +1,4 @@
+#!/bin/sh
+# /usr/bin/
+
+exec /opt/helium-browser/helium-wrapper "$@"
