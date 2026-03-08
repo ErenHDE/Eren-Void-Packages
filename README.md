@@ -3,6 +3,7 @@
 **Eren-Void-Packages** is a custom package repository designed for **Void Linux** users.
 It contains pre-built `.xbps` packages for popular applications, enabling easy installation.
 
+---
 ## 🛠️ Adding the Repository
 
 ### 1. Automatic Setup (Recommended)
