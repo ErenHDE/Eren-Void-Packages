@@ -3,39 +3,6 @@
 **Eren-Void-Packages** is a custom package repository designed for **Void Linux** users.
 It contains pre-built `.xbps` packages for popular applications, enabling easy installation.
 
----
-
-## ✨ Included Packages
-
-This repository currently provides packages for:
-
-* `ab-download-manager`
-* `bottles`
-* `brave`
-* `distrobox`
-* `heroic-games-launcher`
-* `icoextract`
-* `librewolf`
-* `obsidian`
-* `onlyoffice`
-* `patool`
-* `python3-fvs`
-* `python3-setuptools-reproducible`
-* `unityhub`
-* `visual-studio-code`
-* `void-linux-game`
-* `vkBasalt-cli`
-* `vscodium`
-* `zen-browser`
-* `ms-font-ttf`
-* `minecraft-launcher`
-* `protonup-qt`
-* `python3-steam`
-
-> More packages and updates will be added over time.
-
----
-
 ## 🛠️ Adding the Repository
 
 ### 1. Automatic Setup (Recommended)
