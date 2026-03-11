@@ -1,7 +1,7 @@
 # Template file for 'librewolf'
 pkgname=librewolf
-version=148.0
-_number=1
+version=148.0.2
+_number=2
 revision=1
 archs="x86_64"
 hostmakedepends="gnupg"
@@ -52,8 +52,8 @@ distfiles="
 
 
 checksum="
-	515f6568a980bf269f3575dc086ac4af9d5d9723b50da577887272f7cd4e47d3
-	637096f19033db0109f31426cc6f23c58cbff03359f3a58afce6cb09352a6095
+	e058a0008be4b1bc09e3a5ea1f6db9c282be8a7407527bf2c6f4013ffcb26a05
+	914d231c1780281113f432573fae1378916f3a864d5c66abf4a6ac6c6f162820
 	9ced1a0ce0216bbd16cb95847584892ddb3642718530407aeb5b6b0642d3d24a
 	"
 
