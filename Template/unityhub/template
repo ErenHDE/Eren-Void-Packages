@@ -1,6 +1,6 @@
 # Template file for 'unityhub'
 pkgname=unityhub
-version=3.16.2
+version=3.16.3
 revision=1
 archs="x86_64"
 hostmakedepends="tar"
@@ -10,14 +10,14 @@ maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="custom"
 homepage="https://unity.com/"
 distfiles="https://hub.unity3d.com/linux/repos/deb/pool/main/u/unity/unityhub_amd64/UnityHubSetup-${version}-amd64.deb"
-checksum=4af1e7208a8d7d3d8f87236e2a588197b0aca24644e25aec9db870b5ffb562c0
+checksum=49f833c762bedfc4f4bf7d4ae1276d6cc4ba6a5015b8ec934bd3bcf4e623a335
 noverifyrdeps=yes
 
 do_install() {
     vcopy $wrksrc/usr .
     vcopy $wrksrc/opt .
     vmkdir usr/bin
-    ln -sf '/opt/unityhub/unityhub' "$DESTDIR/usr/bin/unityhub"
-    vinstall "$FILESDIR/license.txt" 644 "usr/share/licenses/$pkgname"
+	vbin 'opt/unityhub/unityhub'
+    vlicense "$FILESDIR/license.txt"
     vinstall "$FILESDIR/services-config.json" 644 "usr/share/unity3d/config"
 }
