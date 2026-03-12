@@ -1,6 +1,6 @@
 # Template file for 'helium-browser'
 pkgname=helium-browser
-version=0.9.4.1
+version=0.10.2.1
 revision=1
 archs="x86_64"
 depends="alsa-lib nss freefont-ttf gtk+3"
@@ -8,8 +8,8 @@ short_desc="Helium Browser for Linux "
 maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="GPL-3.0-only AND BSD-3-Clause"
 homepage="https://helium.computer/"
-distfiles="https://github.com/imputnet/helium-linux/releases/download/0.9.4.1/helium-0.9.4.1-x86_64_linux.tar.xz"
-checksum=a97b8352d6a7938e8ef3b8c04b1733995324d220f825a662da3f4b4817bd5423
+distfiles="https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64_linux.tar.xz"
+checksum=96ad9c9241ff9f8028570620eee50ee9960ee2970b20dc0a1b1aefd2e5dd32e1
 
 do_install(){
 	vmkdir opt/helium-browser
