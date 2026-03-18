@@ -6,38 +6,38 @@ revision=2
 archs="x86_64"
 hostmakedepends="gnupg"
 depends="
-gtk+3
-libXt
-startup-notification
-mime-types
-dbus
-nss
-freefont-ttf
-libpulseaudio
-ffmpeg
-hicolor-icon-theme
-libXdamage
-libXi
-alsa-lib
-libXrender
-libXcursor
-gdk-pixbuf
-libXrandr
-pango
-freetype
-glibc
-bash
-fontconfig
-libXcomposite
-glib
-libgcc
-libX11
-libXfixes
-at-spi2-core
-libxcb
-cairo
-nspr
-libXext
+ gtk+3
+ libXt
+ startup-notification
+ mime-types
+ dbus
+ nss
+ freefont-ttf
+ libpulseaudio
+ ffmpeg
+ hicolor-icon-theme
+ libXdamage
+ libXi
+ alsa-lib
+ libXrender
+ libXcursor
+ gdk-pixbuf
+ libXrandr
+ pango
+ freetype
+ glibc
+ bash
+ fontconfig
+ libXcomposite
+ glib
+ libgcc
+ libX11
+ libXfixes
+ at-spi2-core
+ libxcb
+ cairo
+ nspr
+ libXext
 "
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 maintainer="ErenHDE <erenozturkhde@gmail.com>"
