@@ -1,6 +1,6 @@
 # Template file for 'bottles'
 pkgname=bottles
-version=62.0
+version=63.0
 revision=1
 wrksrc="Bottles-${version}"
 build_style=meson
@@ -49,4 +49,4 @@ homepage="https://usebottles.com/"
 distfiles="
 	https://github.com/bottlesdevs/Bottles/archive/refs/tags/${version}.tar.gz
 "
-checksum=dc5663f2385b0aafc1996112ec612963adca472446b2c3fad02f0031afeb37e2
+checksum=f56493895ca02b73bc1c8035ad194f8426e0b214c0ea56b8b887273ef4218eb9
