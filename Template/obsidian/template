@@ -5,10 +5,6 @@ revision=1
 archs="x86_64"
 depends="glibc libgcc fontconfig bash zlib hicolor-icon-theme fuse electron35"
 install=obsidian.install
-options=(!strip)
-source=("obsidian.sh"
-        "obsidian.desktop"
-        "LICENSE-Obsidian")
 short_desc="A powerful knowledge base that works on top of a local folder of plain text Markdown files"
 maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="LicenseRef-Obsidian"
