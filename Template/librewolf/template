@@ -1,44 +1,11 @@
 # Template file for 'librewolf'
 pkgname=librewolf
-version=148.0.2
-_number=3
-revision=2
+version=149.0
+_number=1
+revision=1
 archs="x86_64"
 hostmakedepends="gnupg"
-depends="
- gtk+3
- libXt
- startup-notification
- mime-types
- dbus
- nss
- freefont-ttf
- libpulseaudio
- ffmpeg
- hicolor-icon-theme
- libXdamage
- libXi
- alsa-lib
- libXrender
- libXcursor
- gdk-pixbuf
- libXrandr
- pango
- freetype
- glibc
- bash
- fontconfig
- libXcomposite
- glib
- libgcc
- libX11
- libXfixes
- at-spi2-core
- libxcb
- cairo
- nspr
- libXext
-"
+depends="nss nspr desktop-file-utils hicolor-icon-theme pciutils"
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="MPL-2.0"
@@ -52,8 +19,8 @@ distfiles="
 
 
 checksum="
-	514b2a6f972a6d6e15ac9969bf74ad81f9087c3cb8736105ce5bda68f2ab979f
-	adbf9d0c2bba655c45f53cad334dc83debe327408ac29ba27818989093af204f
+	a56d74bc335930598dc78df223776c48ed05350152d7a35506ed97f4d01af94a
+	270de08f18331040940ccf102fcc44bc3ed44de72bd03a24cb5ada38cc952e35
 	9ced1a0ce0216bbd16cb95847584892ddb3642718530407aeb5b6b0642d3d24a
 	"
 
