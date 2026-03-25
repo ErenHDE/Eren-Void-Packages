@@ -1,6 +1,6 @@
 # Template file for 'visual-studio-code'
 pkgname=visual-studio-code
-version=1.112.0
+version=1.113.0
 revision=1
 archs="x86_64"
 depends="libxkbfile gnupg gtk+3 libsecret nss libgcc libnotify glibc lsof shared-mime-info xdg-utils alsa-lib"
@@ -18,7 +18,7 @@ checksum="
 	c361efa7e02fcad759ed80d2fbab67877f33219b981578af6fffaf18aeb12d9b
 	c361efa7e02fcad759ed80d2fbab67877f33219b981578af6fffaf18aeb12d9b
 	3af748dd6578a1775e8eb7248ba397b7e11840df2ea6ee234ff76fee3dc306cf
-	5728ea3d3c8b9fc78687f5d2de79f43ccaa202cacbf75bc3643e99f4bda8876e
+	a7ef2196ae9e07f777a323cc8ab278651a98eb9c50c849348dcf24d8589dbae6
 "
 
 skip_extraction="code-${version}.desktop.in code-${version}-url-handler.desktop.in code-${version}-workspace.xml.in"
