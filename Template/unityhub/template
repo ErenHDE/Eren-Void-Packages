@@ -1,6 +1,6 @@
 # Template file for 'unityhub'
 pkgname=unityhub
-version=3.16.3
+version=3.16.4
 revision=1
 archs="x86_64"
 hostmakedepends="tar"
@@ -10,7 +10,7 @@ maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="custom"
 homepage="https://unity.com/"
 distfiles="https://hub.unity3d.com/linux/repos/deb/pool/main/u/unity/unityhub_amd64/UnityHubSetup-${version}-amd64.deb"
-checksum=49f833c762bedfc4f4bf7d4ae1276d6cc4ba6a5015b8ec934bd3bcf4e623a335
+checksum=716137178a3f5564dec2656b77e54a6874aff38f949400dc9b5905a30fe9cf64
 noverifyrdeps=yes
 
 do_install() {
