@@ -1,10 +1,10 @@
 # Template file for 'antigravity'
 pkgname=antigravity
-version=1.20.6
+version=1.21.6
 revision=1
 archs="x86_64"
-_x86minor=1773708602
-_x86check=3f0d9f82447ab50374042684f891a07d
+_x86minor=1774402696
+_x86check=98e03c846452e0ea2610f02177e7654c
 hostmakedepends="jq"
 _electron=electron35
 depends="bash $_electron libX11 libxkbfile"
@@ -13,7 +13,7 @@ maintainer="ErenHDE <erenozturkhde@gmail.com>"
 license="LicenseRef-Google-Antigravity"
 homepage="https://antigravity.google/"
 distfiles="https://us-central1-apt.pkg.dev/projects/$pkgname-auto-updater-dev/pool/$pkgname-debian/${pkgname}_${version}-${_x86minor}_amd64_${_x86check}.deb>Antigravity-$version-x86_64.deb"
-checksum=e725a5aeea575b4a74438ef48638822f7388e57e9ca1171c7d056719b3c9fd04
+checksum=af36746e6e3b80d5eeee2eeb652a44da22e584408382e402788bbbc39bfd0597
 
 do_install(){
 	vbin $FILESDIR/$pkgname.sh $pkgname
